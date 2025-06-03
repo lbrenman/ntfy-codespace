@@ -71,12 +71,28 @@ To view logs:
 docker-compose logs -f ntfy
 ```
 
+## iOS Push Notifications
+
+For iOS users using the ntfy iPhone app, you **must** configure the upstream server to receive instant push notifications. This is already configured in the `config/server.yml` file:
+
+```yaml
+upstream-base-url: "https://ntfy.sh"
+```
+
+This setting tells your self-hosted server to use the official ntfy.sh server for iOS/Firebase push notifications while keeping your message content private on your own server.
+
+After making this change, restart the container:
+```bash
+docker-compose restart
+```
+
 ## Customization
 
 You can customize the ntfy server by editing `config/server.yml`. Some common configurations:
 
+- **iOS Push Notifications**: Already configured with `upstream-base-url: "https://ntfy.sh"`
 - **Enable authentication**: Uncomment and configure `auth-file` and related settings
-- **Set base URL**: Configure `base-url` for your Codespace URL
+- **Set base URL**: Configure `base-url` for your Codespace URL (needed for attachments and emails)
 - **Adjust rate limits**: Modify visitor limits as needed
 - **Enable features**: Turn on signup, login, or other features
 
