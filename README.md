@@ -86,6 +86,8 @@ After making this change, restart the container:
 docker-compose restart
 ```
 
+> Note that there are some known issues around iOS Push notifications mentioned [here](https://docs.ntfy.sh/known-issues/)
+
 ## Customization
 
 You can customize the ntfy server by editing `config/server.yml`. Some common configurations:
