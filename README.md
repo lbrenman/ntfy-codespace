@@ -23,17 +23,6 @@ To apply configuration changes:
 1. Edit `config/server.yml`
 2. Restart the container: `docker-compose restart`
 
-## Directory Structure
-
-```
-.
-├── docker-compose.yml    # Docker Compose configuration
-├── config/
-│   └── server.yml       # ntfy server configuration
-├── cache/               # Cache directory (created automatically)
-└── README.md           # This file
-```
-
 ## Key Changes from Default Setup
 
 - **Port**: Changed from port 80 to 8080 to avoid permission issues in Codespaces
